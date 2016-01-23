@@ -1,3 +1,5 @@
+# pylint: disable=missing-docstring
+#
 # Copyright (C) 2016 srforge project developers.
 #
 # See the COPYRIGHT file at the top-level directory of this distribution and at
@@ -7,28 +9,27 @@
 # See LICENSE or http://www.opensource.org/licenses/mit-license.php.
 
 import os
-import sys
 
-from codecs import open
+from codecs import open  # pylint: disable=redefined-builtin
 from setuptools import find_packages
 from setuptools import setup
 
 with open(os.path.join(os.path.dirname(__file__), 'srforge', 'information.py'), 'r', encoding = 'utf-8') as fh:
-    exec(fh.read(), globals(), locals())
+    exec(fh.read(), globals(), locals())  # pylint: disable=exec-used
 
 PARAMS = {}
 
-PARAMS['name'] = NAME
-PARAMS['version'] = VERSION
-PARAMS['description'] = DESCRIPTION
+PARAMS['name'] = NAME  # provided by exec—pylint: disable=undefined-variable
+PARAMS['version'] = VERSION  # provided by exec—pylint: disable=undefined-variable
+PARAMS['description'] = DESCRIPTION  # provided by exec—pylint: disable=undefined-variable
 
 with open('README.rst', 'r', encoding = 'utf-8') as fh:
     PARAMS['long_description'] = fh.read()
 
-PARAMS['url'] = URL
-PARAMS['author'] = AUTHOR
-PARAMS['author_email'] = AUTHOR_EMAIL
-PARAMS['license'] = LICENSE
+PARAMS['url'] = URL  # provided by exec—pylint: disable=undefined-variable
+PARAMS['author'] = AUTHOR  # provided by exec—pylint: disable=undefined-variable
+PARAMS['author_email'] = AUTHOR_EMAIL  # provided by exec—pylint: disable=undefined-variable
+PARAMS['license'] = LICENSE  # provided by exec—pylint: disable=undefined-variable
 
 PARAMS['classifiers'] = [
     'Development Status :: 1 - Planning',
@@ -68,7 +69,7 @@ PARAMS['tests_require'] = [
 ]
 
 PARAMS['data_files'] = [
-    ( 'share/doc/{P[name])-{P[version]}'.format(P = PARAMS), [
+    ( 'share/doc/{P[name])-{P[version]}'.format(P = PARAMS), [  # pylint: disable=bad-format-string
         'README.rst',
     ]),
 ]

@@ -13,7 +13,7 @@ check: lint commit integration acceptance
 
 .PHONY: lint
 lint:
-	pylint srforge srforge_tests
+	pylint srforge srforge_tests setup.py
 
 .PHONY: commit
 commit: lint unit
