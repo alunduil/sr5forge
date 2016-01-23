@@ -7,7 +7,7 @@ matrix:
 sudo: false
 install:
   - "pip install -qU --compile pip"
-  - "pip install -qU --compile behave coverage pylint nose pylint"
+  - "pip install -qU --compile behave coverage nose pylint"
   - "pip install -qU --compile sphinx_rtd_theme"
 script:
   - "pip intall -qU --compile ."
