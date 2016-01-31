@@ -65,6 +65,7 @@ PARAMS['install_requires'] = [
 PARAMS['tests_require'] = [
     'behave',
     'coverage',
+    'hypothesis',
     'nose',
 ]
 
