@@ -83,5 +83,7 @@ class CaselessMapping(dict):
         return super().setdefault(ensure_upper(key), *args, **kwargs)
 
     def update(self, E = None, **F):
-        super().update(self.__class__(E))
+        if E is not None:
+            super().update(self.__class__(E))
+
         super().update(self.__class__(**F))

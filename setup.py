@@ -60,6 +60,7 @@ PARAMS['keywords'] = [
 PARAMS['packages'] = find_packages(exclude = [ '*_tests', ])
 
 PARAMS['install_requires'] = [
+    'mypy-lang',
 ]
 
 PARAMS['tests_require'] = [
